@@ -1,0 +1,27 @@
+
+
+CREATE DATABASE operadores;
+
+USE operadores;
+
+CREATE TABLE PESSOA(
+ id_pessoa integer constraint id_pessoa_PK primary key,
+ nome varchar2(20),
+ cpf varchar2(14),
+ nascimento date
+);
+
+INSERT INTO pessoa VALUES 
+	(1'Luis da Silva','11109865424','20-06-1994'),
+	(2,'Maria Joaquina','87604465334','20-07-2001'),
+	(3,'José da Silva','54279835424','08-03-1999'),
+	(4,'João Henrique','283835424','28-08-1981'),
+	(5,'Eliézio Mesquita','1087865424','28-02-1995'),
+	(6,'Gustavo Souza','7464465334','17-12-2005'),
+	(7,'Wesley Yamazack','54329835424','12-10-1997'),
+	(8,'Edson Arantes','90874465334','02-04-2005'),
+	(9,'Silvio Santos','54279835424','17-07-1955'),
+	(10,'Zico Galinho','654838724','15-11-2011'),
+	(11,'Irá Almeida','1087865424','07-09-2000'),
+	(12,'Luiz Carlos','798465334','25-05-2004'),
+	(13,'Dilma Almeida','12329655424','03-01-1985');

@@ -1,0 +1,118 @@
+
+
+
+CREATE DATABASE crud;
+
+USE crud;
+
+CREATE TABLE login(
+   idlogin INT AUTO_INCREMENT PRIMARY KEY,
+   login VARCHAR(40),
+   senha VARCHAR(40)
+   );
+ 
+
+INSERT INTO login VALUES (null, 'admin', '12346'); 
+
+ 
+SELECT * FROM login;
+create table produto(
+    idproduto bigint auto_increment,
+    nomepro varchar(50) not null,
+    valorcusto double not null,
+    quantidade int not null,
+    primary key(idproduto)
+);
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+
+ 

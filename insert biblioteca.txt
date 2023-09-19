@@ -1,0 +1,118 @@
+*****PRIMEIRA FORMA DE INSERÇÃO*****
+
+INSERT INTO genero (idgenero, nomegenero, sigla) 
+	VALUES (1, 'Informatica', 'INF');
+
+INSERT INTO genero (idgenero, nomegenero, sigla) 
+	VALUES (2, 'Administracao', 'ADM');
+
+INSERT INTO genero (idgenero, nomegenero, sigla) 
+	VALUES (3, 'Direito', 'DIR');
+
+INSERT INTO genero (idgenero, nomegenero, sigla) 
+	VALUES (4, 'Matematica', 'MAT');
+
+INSERT INTO genero (idgenero, nomegenero, sigla) 
+	VALUES (5, 'Esportes', 'ESP');
+
+
+*****SEGUNDA FORMA DE INSERÇÃO*****
+
+INSERT INTO genero (idgenero, nomegenero, sigla) 
+	VALUES (1, 'Informatica', 'INF'),
+	       (2, 'Administracao', 'ADM'),
+	       (3, 'Direito', 'DIR'),
+	       (4, 'Matematica', 'MAT'),
+	       (5, 'Esportes', 'ESP');
+
+
+*****TERCEIRA FORMA DE INSERÇÃO*****
+
+INSERT INTO genero (idgenero, nomegenero, sigla) 
+	VALUES (null, 'Informatica', 'INF'),
+	       (null, 'Administracao', 'ADM'),
+	       (null, 'Direito', 'DIR'),
+	       (null, 'Matematica', 'MAT'),
+	       (null, 'Esportes', 'ESP');
+
+
+INSERT INTO autor (idautor, nomecompleto, nomeautor, sobrenome)
+	VALUES(null, 'Carlos Alberto Heuser', 'Carlos Alberto', 'Heuser'),
+	      (null, 'Idalberto Chiavenato', 'Idalberto', 'Chiavenato'),
+	      (null, 'Paul Deitel', 'Paul', 'Deitel');
+
+INSERT INTO editora
+	VALUES(null, 'Pearson'),
+	      (null, 'Editora Campus'),
+	      (null, 'Novatec'); 	
+
+
+INSERT INTO livro
+	VALUES(null, 'Projeto de Banco de Dados','15', 2020, 1, 1, 2),
+	      (null, 'Java a Biblia', '10', 2019, 1, 3, 1),
+	      (null, 'Teoria Geral da Administracao', '20', 2017, 2, 2, 3);
+
+alter table livro change ano ano varchar(4) not null;
+
+INSERT INTO livro (ano) Values (2020);
+
+UPDATE livro SET ano = '2020';
+
+UPDATE livro SET ano = '2017' WHERE idlivro=3;
+
+INSERT INTO  aluno VALUES
+	(1, 'Maria', '54989756322', 'Caxias do Sul', 'F', '98766544058', 'maria@senacrs.com.br'),
+	(2, 'Joao', '51988764550', 'Porto Alegre', 'M', '33245699063', 'joao@senacrs.com.br');
+
+
+ALTER TABLE empresta ADD dtretirada DATE NOT NULL;
+
+ALTER TABLE empresta ADD dtdevolucao DATE NOT NULL;
+
+INSERT INTO  empresta VALUES
+	('1', 1, '2023-07-07', 'NULL');
+
+INSERT INTO  empresta VALUES
+	('2', 3, '2023-07-07', 'NULL');
+
+
+ select * from genero where idgenero = 1;
+
+ select idlivro, nomelivro, ano from livro where ano >= 2019 and ano <= 2020;
+
+ select idlivro, nomelivro, ano from livro where ano = 2017 OR ano = 2020;
+
+ select * from livro where nomelivro like 'J%';
+
+ select * from livro where nomelivro like '%B%';
+
+select * from livro where nomelivro like '%s';
+
+select * from aluno where nomealuno like '%a%';
+
+select * from aluno where nomealuno like '_a%';
+
+select * from aluno where nomealuno like '%o_o';
+
+select * from aluno where nomealuno like 'M_r%';
+
+select * from aluno where nomealuno like 'm___a';
+
+SELECT l.nomelivro, g.sigla
+	FROM livro l, genero g
+	WHERE g.idgenero = l.genero;
+
+
+SELECT l.nomelivro, a.sobrenome, l.ano, l.edicao
+	FROM livro l, autor a
+	WHERE a.idautor = l.autor;
+
+
+SELECT l.nomelivro AS Livro, a.sobrenome 
+	FROM livro l, autor a
+	WHERE a.idautor = l.autor;
+
+
+
+
+
